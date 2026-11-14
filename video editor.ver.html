@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>キャラシ制作キッド（動画編集用）</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- inport data -->
+  <div style="position: absolute; left: 20px; top: 625px;">
+    <button id="loadData">データ読込</button>
+    <button id="saveImage">画像保存</button>
+    <button onclick="location.href='https://bigigura.github.io/TRPG_character_maker/'">キャラシ制作</button>
+    <input type="file" id="loadFile" accept=".json" style="display: none;">
+  </div>
+
+  <!-- image system -->
+  <label class="image-picker-zone"><img class="preview" alt="プレビュー画像"></label>
+  <input type="file" class="imageInput" accept="image/*">
+
+  <!-- image text -->
+  <input type="text" class="text big with_bottom_border" style="left: 200px; top: 460px; width: 350px;" placeholder="キャラ名">
+  <input type="text" class="text gray mini" style="left: 200px; top: 430px;" placeholder="ふりがな">
+
+  <!-- status -->
+  <label class="text" style="left: 465px; top: 40px;">STR</label>
+  <input type="number" class="text big with_bottom_border" style="left: 465px; top: 70px; width: 65px;">
+
+  <label class="text" style="left: 565px; top: 40px;">CON</label>
+  <input type="number" class="text big with_bottom_border" style="left: 565px; top: 70px; width: 65px;">
+
+  <label class="text" style="left: 665px; top: 40px;">POW</label>
+  <input type="number" class="text big with_bottom_border" style="left: 665px; top: 70px; width: 65px;">
+
+  <label class="text" style="left: 765px; top: 40px;">DEX</label>
+  <input type="number" class="text big with_bottom_border" style="left: 765px; top: 70px; width: 65px;">
+
+  <label class="text" style="left: 865px; top: 40px;">APP</label>
+  <input type="number" class="text big with_bottom_border" style="left: 865px; top: 70px; width: 65px;">
+
+  <label class="text" style="left: 965px; top: 40px;">SIZ</label>
+  <input type="number" class="text big with_bottom_border" style="left: 965px; top: 70px; width: 65px;">
+
+  <label class="text" style="left: 1065px; top: 40px;">INT</label>
+  <input type="number" class="text big with_bottom_border" style="left: 1065px; top: 70px; width: 65px;">
+
+  <label class="text" style="left: 1165px; top: 40px;">EDU</label>
+  <input type="number" class="text big with_bottom_border" style="left: 1165px; top: 70px; width: 65px;">
+
+  <span class="text left mini" style="left: 495px; top: 125px;">幸運 <input type="text" class="text left mini with_bottom_border" id="luck" style="display: block; width: 55px; margin-top: 10px;"></span>
+  <span class="text left mini" style="left: 575px; top: 125px;">HP <input type="text" class="text left mini with_bottom_border" id="hp" style="display: block; width: 55px; margin-top: 10px;"></span>
+  <span class="text left mini" style="left: 655px; top: 125px;">MP <input type="text" class="text left mini with_bottom_border" id="mp" style="display: block; width: 55px; margin-top: 10px;"></span>
+  <span class="text left mini" style="left: 735px; top: 125px;">SAN <input type="text" class="text left mini with_bottom_border" id="san" style="display: block; width: 55px; margin-top: 10px;"></span>
+  <span class="text left mini" style="left: 815px; top: 125px;">不定 <input type="text" class="text left mini with_bottom_border" id="indefinite" readonly style="display: block; width: 55px; margin-top: 10px;"></span>
+  <span class="text left mini" style="left: 895px; top: 125px;">アイデア <input type="text" class="text left mini with_bottom_border" id="idea" style="display: block; width: 55px; margin-top: 10px;"></span>
+  <span class="text left mini" style="left: 975px; top: 125px;">知識 <input type="text" class="text left mini with_bottom_border" id="knowledge" style="display: block; width: 55px; margin-top: 10px;"></span>
+  <span class="text left mini" style="left: 1055px; top: 125px;">MOV <input type="text" class="text left mini with_bottom_border" id="mov" style="display: block; width: 55px; margin-top: 10px;"></span>
+  <span class="text left mini" style="left: 1135px; top: 125px;">DB <input type="text" class="text left mini with_bottom_border" id="db" readonly style="display: block; width: 55px; margin-top: 10px;"></span>
+  <span class="text left mini" style="left: 1215px; top: 125px;">ビルド <input type="text" class="text left mini with_bottom_border" id="build" readonly style="display: block; width: 55px; margin-top: 10px;"></span>
+
+  <!-- skills -->
+  <div class="skill-list" style="position: absolute; left: 435px; top: 260px;" ></div>
+  <div class="skill-list" style="position: absolute; left: 870px; top: 260px;" ></div>
+
+  <!-- weapons -->
+  <label class="text left" style="left: 435px; top: 200px;">持ち物</label>
+
+  <input type="text" class="text left with_bottom_border" style="left: 515px; top: 220px; width: 230px;">
+  <input type="text" class="text left with_bottom_border" style="left: 765px; top: 220px; width: 230px;">
+  <input type="text" class="text left with_bottom_border" style="left: 1015px; top: 220px; width: 230px;">
+
+  <!-- lines -->
+  <label class="line" style="left: 415px; top: 10px; width: 1px; height: 600px;"></label>
+  <label class="line" style="left: 425px; top: 180px; width: 865px; height: 1px;"></label>
+  <label class="line" style="left: 425px; top: 250px; width: 865px; height: 1px;"></label>
+  <label class="line" style="left: 10px; top: 620px; width: 1275px; height: 1px;"></label>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="system.js"></script>
+</body>
