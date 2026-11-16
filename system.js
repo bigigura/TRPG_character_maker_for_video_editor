@@ -341,6 +341,14 @@ document.getElementById("saveImage").addEventListener("click", async () => {
     scrollY: 0,
 
     onclone: (clonedDoc) => {
+      clonedDoc.querySelectorAll(".skill-row").forEach(row => {
+        const skillSelect = row.querySelector(".skill-select");
+
+        if (!skillSelect || skillSelect.value.trim() === "") {
+          row.style.display = "none";
+        }
+      });
+      
       function replaceInputWithText(input) {
         const style = getComputedStyle(input);
         const label = clonedDoc.createElement('div');
